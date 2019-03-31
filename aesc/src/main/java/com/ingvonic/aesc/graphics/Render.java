@@ -16,20 +16,29 @@ public class Render {
         this.paint = paint;
     }
 
-    public void renderText(String text, Point pos){
+    public void renderSprite(Sprite sprite, int x, int y) {
+        for (int xx = 0; xx < sprite.getWidth(); xx++)
+            for (int yy = 0; yy < sprite.getHeight(); yy++) {
+                Paint p = new Paint();
+                p.setColor(sprite.getPixel(xx, yy));
+                canvas.drawPoint(x + xx, y + yy, p);
+            }
+    }
+
+    public void renderText(String text, Point pos) {
         canvas.drawText(text, pos.x, pos.y, paint);
     }
 
-    public void renderBackground(){
+    public void renderBackground() {
         canvas.drawColor(color);
     }
 
-    public void renderBackground(int color){
+    public void renderBackground(int color) {
         setColor(color);
         renderBackground();
     }
 
-    public void setColor(int color){
-        this.color=color;
+    public void setColor(int color) {
+        this.color = color;
     }
 }
