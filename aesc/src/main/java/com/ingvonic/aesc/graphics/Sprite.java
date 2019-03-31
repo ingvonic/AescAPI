@@ -2,7 +2,7 @@ package com.ingvonic.aesc.graphics;
 
 public class Sprite {
 
-    private byte[][] raster;
+    private int[][] raster;
 
     private int w;
     private int h;
@@ -16,7 +16,7 @@ public class Sprite {
     }
 
     public int getPixel(int x, int y) {
-        return raster[x][y] + 128;
+        return raster[x][y];
     }
 
     public int getWidth() {

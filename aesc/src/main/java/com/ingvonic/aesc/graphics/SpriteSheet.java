@@ -1,19 +1,23 @@
 package com.ingvonic.aesc.graphics;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 public class SpriteSheet {
 
-    private byte[][]raster;
+    private int[][]raster;
 
     private int width;
     private int height;
 
-    public SpriteSheet(byte[][]raster, int width, int height){
-        this.raster=raster;
+    public SpriteSheet(String fileName, int width, int height){
+        Bitmap bmp = BitmapFactory.decodeFile(fileName);
+
         this.width=width;
         this.height=height;
     }
 
-    public byte[][]getRaster(){
+    public int[][]getRaster(){
         return raster;
     }
 
